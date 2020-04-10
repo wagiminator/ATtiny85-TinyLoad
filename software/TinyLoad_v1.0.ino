@@ -84,7 +84,7 @@
 
 // Text strings stored in program memory
 const char StartScreen[]  PROGMEM = 
-  "-- TinyLoad  v0.7  --"
+  "-- TinyLoad  v1.0  --"
   "Turn POTI full CCW,  "
   "connect the load and "
   "press SET button.    ";
