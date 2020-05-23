@@ -4,6 +4,8 @@
 
 TinyLoad is a simple electronic constant current dummy load. The ATtiny85 measures voltage, current and temperature of the heat sink, calculates power, energy and battery capacity, controls the fan and displays all relevant data on the OLED. The button is used to switch between power/restistance and energy/capacity display.
 
+Video: https://youtu.be/z7fddsFyD1E
+
 ![IMG_20200409_133602_x.jpg](https://image.easyeda.com/pullimage/idF4nEBSxHMoRsFqdBv2tVOhwem6n1S4n9iPAhVX.jpeg)
 ![IMG_20200409_133709_x.jpg](https://image.easyeda.com/pullimage/jd1wluc54d1eXohNjokzkOAsJymzH5ixjnlDlrCd.jpeg)
 ![IMG_20200401_180140_x.jpg](https://image.easyeda.com/pullimage/KBjzbXSX2q9HdlKo6d0NRewWeuKPdOpT36tDqTWc.jpeg)
