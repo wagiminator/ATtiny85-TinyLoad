@@ -7,11 +7,11 @@ TinyLoad is a simple electronic constant current dummy load. The ATtiny measures
 ![TinyLoad_pic1.jpg](https://raw.githubusercontent.com/wagiminator/ATtiny85-TinyLoad/master/documentation/TinyLoad_pic1.jpg)
 
 # Hardware
-The electronic load control circuit, which essentially consists of a potentiometer, an operational amplifier, a MOSFET and a shunt resistor, ensures that the same current flows regardless of the voltage applied. For this purpose, a 100 Ohm shunt consisting of three 300 Ohm resistors in parallel for proper heat dissipation is located in the load circuit, via which the current is measured. The LMV358 rail-to-rail OpAmp compares this with the target value, which is specified via a 10-turn 10k potentiometer and a 100k resistor and accordingly controls the gate of an IRL540N logic level power MOSFET, which in turn adjusts the current through its internal resistance set in this way.
+The electronic load control circuit, which essentially consists of a potentiometer, an operational amplifier, a MOSFET and a shunt resistor, ensures that the same current flows regardless of the voltage applied.
 
 ![TinyLoad_pic4.png](https://raw.githubusercontent.com/wagiminator/ATtiny85-TinyLoad/master/documentation/TinyLoad_pic4.png)
 
-The current measured at the shunt is also amplified by a second OpAmp and measured by the ADC of the ATtiny. The voltage is measured using a voltage divider. The temperature of the MOSFET is measured by a 10k 3950B NTC thermistor. If necessary, the fan is switched on via a MOSFET.
+For this purpose, a 100 milliohms shunt consisting of three 300 milliohms resistors in parallel for proper heat dissipation is located in the load circuit, via which the current is measured. The LMV358 rail-to-rail OpAmp compares this with the target value, which is specified via a 10-turn 10k potentiometer and a 100k resistor and accordingly controls the gate of an IRL540N logic level power MOSFET, which in turn adjusts the current through its internal resistance set in this way. The current measured at the shunt is also amplified by a second OpAmp and measured by the ADC of the ATtiny. The voltage is measured using a voltage divider. The temperature of the MOSFET is measured by a 10k 3950B NTC thermistor. If necessary, the fan is switched on via a MOSFET.
 
 ![TinyLoad_pic3.jpg](https://raw.githubusercontent.com/wagiminator/ATtiny85-TinyLoad/master/documentation/TinyLoad_pic3.jpg)
 
