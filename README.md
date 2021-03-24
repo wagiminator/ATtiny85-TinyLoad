@@ -1,5 +1,5 @@
 # TinyLoad - Simple Electronic Load based on ATtiny45/85
-TinyLoad is a simple electronic constant current dummy load. The ATtiny measures voltage, current and temperature of the heat sink, calculates power, energy and battery capacity, controls the fan and displays all relevant data on the OLED. The button is used to switch between power/restistance and energy/capacity display.
+TinyLoad is a simple electronic constant current dummy load. The ATtiny measures voltage, current and temperature of the heat sink, calculates power, energy and battery capacity, controls the fan and displays all relevant data on the OLED. The button is used to switch between power/resistance and energy/capacity display.
 
 - Project Video (YouTube): https://youtu.be/z7fddsFyD1E
 - Project Files (EasyEDA): https://easyeda.com/wagiminator/y-attiny85-electronic-load
