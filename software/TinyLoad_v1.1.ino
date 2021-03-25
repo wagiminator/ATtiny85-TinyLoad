@@ -3,7 +3,7 @@
 // The ATtiny measures voltage, current and temperature of the heat sink,
 // calculates power, energy and electric charge, controls the fan and displays
 // all relevant data on the OLED. The button is used to switch between
-// power/restistance and energy/charge display.
+// power/resistance and energy/charge display.
 //
 // The ADC of the ATtiny does its best to make the tinyLoad a pretty accurate
 // tool, but it might need a little calibration.
@@ -378,7 +378,7 @@ uint8_t NTCpresent() {
 // Text strings stored in program memory
 const char StartScreen[] PROGMEM = 
   "-- TinyLoad  v1.1  --"
-  "Turn POTI full CCW,  "
+  "Turn poti full CCW,  "
   "connect the load and "
   "press SET button.    ";
 const char WarnScreen[] PROGMEM =
@@ -414,7 +414,7 @@ int main(void) {
   OLED_clearScreen();
   OLED_setCursor(0,0);
   OLED_printPrg(StartScreen);
-  while( (!buttonPressed()) && (ADC_read(VOLTAGE_AP, REFVCC, 1) < 5) );
+  while( (!buttonPressed()) && (ADC_read(CURRENT_AP, REF1V1, 1) < 10) );
 
   // Init some variables;
   lastmillis = MIL_read();
