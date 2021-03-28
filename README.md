@@ -67,8 +67,8 @@ The ADC and the internal reference voltages of the ATtiny do their best to make 
 - Set ULCAL and ILCAL to "1" in the sketch, compile and upload.
 - Choose a stable input voltage of around 5V and turn the poti until the display shows a current of around 0.7A. Measure the voltage and the current with a trusty multimeter or a good lab bench power supply.
 - Calculate the calibration factors as follows:
-- ULCAL = voltage measured with multimeter / voltage shown on OLED.
-- ILCAL = current measured with multimeter / current shown on OLED.
+  - ULCAL = voltage measured with multimeter / voltage shown on OLED.
+  - ILCAL = current measured with multimeter / current shown on OLED.
 - Set the ULCAL and ILCAL value in the sketch, compile and upload again.
 
 ## Precautions
