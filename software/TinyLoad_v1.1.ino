@@ -28,7 +28,7 @@
 // - Do not exceed the maximum voltage of 26V !
 //
 //                                 +-\/-+
-// Button/NTC ------ A0 (D5) PB5  1|    |8  Vcc
+// Button/NTC ------ A0 (D5) PB5  1|°   |8  Vcc
 // Voltage Sensor--- A3 (D3) PB3  2|    |7  PB2 (D2) A1 ---- OLED (SCK)
 // Current Sensor -- A2 (D4) PB4  3|    |6  PB1 (D1) ------- Fan
 //                           GND  4|    |5  PB0 (D0) ------- OLED (SDA)
@@ -44,7 +44,9 @@
 // Clock:   8 MHz (internal)
 // Millis:  disabled
 // B.O.D.:  2.7V
-// Leave the rest on default settings. Don't forget to "Burn bootloader" !
+// Leave the rest on default settings. Don't forget to "Burn bootloader"!
+// No Arduino core functions or libraries are used. Use the makefile if 
+// you want to compile without Arduino IDE.
 //
 // The I²C OLED implementation is based on TinyOLEDdemo
 // https://github.com/wagiminator/ATtiny13-TinyOLEDdemo
@@ -87,12 +89,6 @@
 #define NTCMIN        550       // lowest ADC value for NTC; below is a button press
 #define NTCFAN        625       // turn on the fan if ADC value is below
 #define NTCHOT        560       // show warning screen if ADC value is below
-
-// Voltage references
-#define REFVCC        0                             // Vcc as reference
-#define REF1V1        (1<<REFS1)                    // internal 1.1V reference
-#define REF2V56       ((1<<REFS2) | (1<<REFS1))     // internal 2.56V reference
-#define AVBG          ((1<<MUX3) | (1<<MUX2))       // port of internal bandgap (1.1V reference)
 
 // -----------------------------------------------------------------------------
 // I2C Implementation
@@ -330,6 +326,12 @@ ISR(TIM0_COMPA_vect) {
 // ADC Implementation
 // -----------------------------------------------------------------------------
 
+// Voltage references
+#define REFVCC        0                             // Vcc as reference
+#define REF1V1        (1<<REFS1)                    // internal 1.1V reference
+#define REF2V56       ((1<<REFS2) | (1<<REFS1))     // internal 2.56V reference
+#define AVBG          ((1<<MUX3)  | (1<<MUX2))      // port of internal bandgap (1.1V reference)
+
 // ADC init
 void ADC_init(void) {
   ADCSRA  = (1<<ADPS2) | (1<<ADPS1);        // set ADC clock prescaler to 64
@@ -359,14 +361,14 @@ EMPTY_INTERRUPT (ADC_vect);                 // nothing to be done here
 // Additional Functions
 // -----------------------------------------------------------------------------
 
-// returns true if button is pressed
-uint8_t buttonPressed() {
+// Check if button is pressed
+uint8_t buttonPressed(void) {
   uint16_t value = ADC_read(NTC_AP, REFVCC, 1);
   return (value < NTCMIN);
 }
 
-// returns true if NTC is connected
-uint8_t NTCpresent() {
+// Check if NTC is connected
+uint8_t NTCpresent(void) {
   uint16_t value = ADC_read(NTC_AP, REFVCC, 1);
   return ( (value >= NTCMIN) && (value < 1020) );
 }

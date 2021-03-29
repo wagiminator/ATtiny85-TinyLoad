@@ -1,6 +1,6 @@
-# Project:  tinyCharger
+# Project:  tinyLoad
 # Author:   Stefan Wagner
-# Year:     2021
+# Year:     2020
 # URL:      https://easyeda.com/wagiminator
 #           https://github.com/wagiminator
 #
