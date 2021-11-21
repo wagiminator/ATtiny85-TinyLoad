@@ -31,8 +31,7 @@ The I²C protocol implementation is based on a crude bitbanging method. It was s
 - Go to **Tools -> Board -> ATtinyCore** and select **ATtiny25/45/85 (No bootloader)**.
 - Go to **Tools** and choose the following board options:
   - **Chip:**           ATtiny45 or 85 (depending on your chip)
-  - **Clock:**          8 MHz (internal)
-  - **Millis/Micros:**  disabled
+  - **Clock:**          1 MHz (internal)
   - **B.O.D.Level:**    B.O.D. enabled (2.7V)
   - Leave the rest at the default settings
 - Connect your programmer to your PC and to the ICSP header on the board.
@@ -47,7 +46,7 @@ The I²C protocol implementation is based on a crude bitbanging method. It was s
 - Navigate to the folder with the hex-file.
 - Execute the following command (if necessary replace "t85" with your chip and "usbasp" with the programmer you use):
   ```
-  avrdude -c usbasp -p t85 -U lfuse:w:0xe2:m -U hfuse:w:0xd5:m -U efuse:w:0xff:m -U flash:w:tinyload.hex
+  avrdude -c usbasp -p t85 -U lfuse:w:0x62:m -U hfuse:w:0xd5:m -U efuse:w:0xff:m -U flash:w:tinyload.hex
   ```
 
 ### If using the makefile (Linux/Mac)
